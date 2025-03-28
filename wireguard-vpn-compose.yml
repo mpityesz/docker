@@ -31,8 +31,8 @@ services:
     volumes:
       ### Host path where WireGuard config and peer files will be stored
       - /mnt/storage/docker-projects/wireguard-vpn/volumes/config:/config
-      ### Allows access to host kernel modules
-      - /lib/modules:/lib/modules ro
+      ### Allows access to host kernel modules - READ ONLY
+      - /lib/modules:/lib/modules:ro
     networks:
       wireguard_vpn_net:
         ipv4_address: 172.35.0.2
